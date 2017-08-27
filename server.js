@@ -10,17 +10,17 @@ app.get('/', function (req, res) {
 });
 
    
-app.get('planet-one', function(req,res){
+app.get('/planet-one', function(req,res){
 
     res.send("mercury is first");
 });
 
-app.get('planet-two', function(req,res){
+app.get('/planet-two', function(req,res){
 
     res.send("venus is second");
 });
 
-app.get('planet-three', function(req,res){
+app.get('/planet-three', function(req,res){
 
     res.send("earth is third");
 });
