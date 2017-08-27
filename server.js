@@ -9,6 +9,27 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+   
+app.get('planet-one', function(req,res){
+
+    res.send("mercury is first");
+});
+
+app.get('planet-two', function(req,res){
+
+    res.send("venus is second");
+});
+
+app.get('planet-three', function(req,res){
+
+    res.send("earth is third");
+});
+
+
+
+
+
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
