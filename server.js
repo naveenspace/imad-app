@@ -5,9 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
+
 
 
 var planets = {
@@ -26,8 +24,7 @@ var planets = {
             Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth. It is the smallest planet in the Solar System, with an equatorial radius of 2,439.7 kilometres.
         </p>`
 },
-
-'planet-two': {
+   'planet-two': {
     title: 'planet-two | naveen',
     heading: 'planet-two',
     
@@ -80,12 +77,20 @@ ${content}
 }
 
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
 
-app.get('/:planetName', fucntion(req,res){
+app.get('/:planetName', function(req,res) {
     
   var planetName = req.params.planetName;
   res.send(createTemplate(planets[planetName]));
+    
+});
 
+app.get('/ui/style.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
+});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
