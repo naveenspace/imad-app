@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
    
 app.get('/planet-one', function(req,res){
 
-    res.send("mercury is first");
+    res.sendFile(path.join(__dirname, 'ui', 'planet-one.html'));
 });
 
 app.get('/planet-two', function(req,res){
