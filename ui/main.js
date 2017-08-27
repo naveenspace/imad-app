@@ -1,4 +1,4 @@
-console.log('hi i am jupitet!');
+console.log('loaded!');
 
 var element = document.getElementById('real');
 
